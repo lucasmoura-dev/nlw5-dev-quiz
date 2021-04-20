@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBarWidget(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             Row(
@@ -28,7 +28,21 @@ class _HomePageState extends State<HomePage> {
                 LevelButtonWidget(label: 'Perito'),
               ],
             ),
-            QuizCardWidget()
+            SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                children: [
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                ],
+              ),
+            )
           ],
         ),
       ),
